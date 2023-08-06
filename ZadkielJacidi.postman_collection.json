@@ -1,0 +1,1988 @@
+{
+	"info": {
+		"_postman_id": "bb8cfbc8-c13c-4e2f-9649-5e784e370fd7",
+		"name": "Jacidi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10786654"
+	},
+	"item": [
+		{
+			"name": "Clients",
+			"item": [
+				{
+					"name": "CLIENTS-LIST",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/{{clients-api}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{clients-api}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ok response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{clients-api}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{clients-api}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Aug 2023 23:21:30 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Clients list sent successfully\",\n    \"httpCode\": 200,\n    \"data\": [\n        {\n            \"id\": \"64ce866202186b26ce8a5c0f\",\n            \"name\": \"Zadkiel\",\n            \"lastName\": \"Romero\",\n            \"dni\": \"123456718\",\n            \"email\": \"exampl2e@email.com\",\n            \"lastDelivery\": null,\n            \"nextRenewal\": \"2023-09-05T04:00:00.000+00:00\",\n            \"membership\": \"64ce6d9000812963e71f9c08\"\n        },\n        {\n            \"id\": \"64cecc7802186b26ce8a5c8c\",\n            \"name\": \"Joe\",\n            \"lastName\": \"Dae\",\n            \"dni\": \"12345671128\",\n            \"email\": \"example@email.com\",\n            \"lastDelivery\": null,\n            \"nextRenewal\": \"2023-09-05T04:00:00.000+00:00\",\n            \"membership\": \"64ce6fc200812963e71f9c09\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "CLIENTS-CREATE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Zadkiel\",\n    \"lastName\": \"Romero\",\n    \"email\": \"zadkielExample@email.com\",\n    \"dni\": \"1234457528\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/{{clients-api}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{clients-api}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ok response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Joe\",\n    \"lastName\": \"Dae\",\n    \"email\": \"example12@email.com\",\n    \"dni\": \"1234sd567528\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{clients-api}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{clients-api}}"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Aug 2023 23:23:20 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Client created successfully\",\n    \"httpCode\": 201,\n    \"data\": {\n        \"id\": \"64ced9e802186b26ce8a5cbb\",\n        \"name\": \"Joe\",\n        \"lastName\": \"Dae\",\n        \"dni\": \"1234sd567528\",\n        \"email\": \"example12@email.com\",\n        \"lastDelivery\": null,\n        \"nextRenewal\": \"2023-09-05T04:00:00.000+00:00\",\n        \"membership\": \"64ce6d9000812963e71f9c08\"\n    }\n}"
+						},
+						{
+							"name": "error response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Joe\",\n    \"lastName\": \"Dae\",\n    \"email\": \"example12@email.com\",\n    \"dni\": \"1234sd567528\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{clients-api}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{clients-api}}"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Aug 2023 23:23:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid value\",\n    \"httpCode\": 400,\n    \"error\": {\n        \"description\": \"DNI or email already exists\",\n        \"id\": \"BAD_REQUEST\",\n        \"extra\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "CLIENT-BY-ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/{{clients-api}}/64cecc7802186b26ce8",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{clients-api}}",
+								"64cecc7802186b26ce8"
+							],
+							"query": [
+								{
+									"key": "id ",
+									"value": "64ce7cef00812963e71f9c28",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ok response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{clients-api}}?id=64ce640e00812963e71f9bfd",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{clients-api}}"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "64ce640e00812963e71f9bfd"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Aug 2023 15:30:14 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"64ce640e00812963e71f9bfd\",\n        \"name\": \"Zadkiel\",\n        \"lastName\": \"Romero\",\n        \"email\": \"example@email.com\",\n        \"lastDelivery\": null,\n        \"nextRenewal\": \"2023-09-05T04:00:00.000+00:00\",\n        \"membership\": null,\n        \"dni\": \"12345678\"\n    }\n]"
+						},
+						{
+							"name": "error response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{clients-api}}/64cecc7802186b26ce8",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{clients-api}}",
+										"64cecc7802186b26ce8"
+									],
+									"query": [
+										{
+											"key": "id ",
+											"value": "64ce7cef00812963e71f9c28",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Aug 2023 23:05:24 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Client not found\",\n    \"httpCode\": 404,\n    \"error\": {\n        \"description\": \"Resource not found\",\n        \"id\": \"NOT_FOUND\",\n        \"extra\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "CLIENT-UPDATE",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"membership\": \"64ce6fc200812963e71f9c09\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/{{clients-api}}/64cfc31ea9ecfb36479019ed",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{clients-api}}",
+								"64cfc31ea9ecfb36479019ed"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ok response",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Joe\",\n    \"lastName\": \"Dae\",\n    \"email\": \"example@email.com\",\n    \"dni\": \"12345671128\",\n    \"membership\": \"64ce6fc200812963e71f9c09\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{clients-api}}/64cedcfe02186b26ce8a5cc7",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{clients-api}}",
+										"64cedcfe02186b26ce8a5cc7"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Aug 2023 23:39:52 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Client updated successfully\",\n    \"httpCode\": 200,\n    \"data\": {\n        \"id\": \"64cedcfe02186b26ce8a5cc7\",\n        \"name\": \"Joe\",\n        \"lastName\": \"Dae\",\n        \"dni\": \"12345671128\",\n        \"email\": \"example@email.com\",\n        \"lastDelivery\": null,\n        \"nextRenewal\": \"2023-09-05T04:00:00.000+00:00\",\n        \"membership\": \"64ce6fc200812963e71f9c09\"\n    }\n}"
+						},
+						{
+							"name": "error response",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Joe\",\n    \"lastName\": \"Dae\",\n    \"email\": \"example@email.com\",\n    \"dni\": \"12345671128\",\n    \"membership\": \"64ce6fc200812963e71f9c09\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{clients-api}}/64cecc7802186b26ce8a5c8c",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{clients-api}}",
+										"64cecc7802186b26ce8a5c8c"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Aug 2023 23:35:48 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Client not found\",\n    \"httpCode\": 404,\n    \"error\": {\n        \"description\": \"Resource not found\",\n        \"id\": \"NOT_FOUND\",\n        \"extra\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "CLIENT-DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/{{clients-api}}/64ceda8502186b26ce8a5cbc",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{clients-api}}",
+								"64ceda8502186b26ce8a5cbc"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ok response",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{clients-api}}/64ceda8502186b26ce8a5cbc",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{clients-api}}",
+										"64ceda8502186b26ce8a5cbc"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Aug 2023 23:27:37 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Client deleted successfully\",\n    \"httpCode\": 200,\n    \"data\": null\n}"
+						},
+						{
+							"name": "error response",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{clients-api}}/64ceda8502186b26ce8a5cbc",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{clients-api}}",
+										"64ceda8502186b26ce8a5cbc"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Aug 2023 23:28:07 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Client not found\",\n    \"httpCode\": 404,\n    \"error\": {\n        \"description\": \"Resource not found\",\n        \"id\": \"NOT_FOUND\",\n        \"extra\": null\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Memberships",
+			"item": [
+				{
+					"name": "MEMBERSHIP-LIST",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/{{memberships-api}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{memberships-api}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ok response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{memberships-api}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{memberships-api}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 06 Aug 2023 17:10:07 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Membership list sent successfully\",\n    \"httpCode\": 200,\n    \"data\": [\n        {\n            \"id\": \"64cfc2b8a9ecfb36479019ea\",\n            \"key\": \"free\",\n            \"name\": \"Free\",\n            \"prio\": 1,\n            \"duration\": 0\n        },\n        {\n            \"id\": \"64cfc2dea9ecfb36479019eb\",\n            \"key\": \"monthly\",\n            \"name\": \"Monthly\",\n            \"prio\": 0,\n            \"duration\": 2592000\n        },\n        {\n            \"id\": \"64cfc314a9ecfb36479019ec\",\n            \"key\": \"yearly\",\n            \"name\": \"Yearly\",\n            \"prio\": 0,\n            \"duration\": 31104000\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "MEMBERSHIP-CREATE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"key\": \"yearly\",\n    \"name\": \"Yearly\",\n    \"prio\":81,\n    \"duration\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/{{memberships-api}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{memberships-api}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ok response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"key\": \"free\",\n    \"name\": \"Free\",\n    \"prio\": 12,\n    \"duration\": 0\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{memberships-api}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{memberships-api}}"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Aug 2023 23:57:43 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Membership created successfully\",\n    \"httpCode\": 201,\n    \"data\": {\n        \"id\": \"64cee1f702186b26ce8a5ccc\",\n        \"key\": \"free\",\n        \"name\": \"Free\",\n        \"prio\": 12,\n        \"duration\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "MEMBERSHIP-BY-ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/{{memberships-api}}/64ce6d9000812963e71f9c08",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{memberships-api}}",
+								"64ce6d9000812963e71f9c08"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "MEMBERSHIP-BY-ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{memberships-api}}?id=64ce6d9000812963e71f9c08",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{memberships-api}}"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "64ce6d9000812963e71f9c08"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Aug 2023 15:42:30 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"64ce6d9000812963e71f9c08\",\n        \"key\": \"free\",\n        \"name\": \"Free\",\n        \"prio\": 12,\n        \"duration\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "MEMBERSHIP-DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/{{memberships-api}}/64ce6d9000812963e71f9c08",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{memberships-api}}",
+								"64ce6d9000812963e71f9c08"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ok response",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{memberships-api}}/64ce6d9000812963e71f9c08",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{memberships-api}}",
+										"64ce6d9000812963e71f9c08"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Aug 2023 23:56:50 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Membership deleted successfully\",\n    \"httpCode\": 200,\n    \"data\": null\n}"
+						},
+						{
+							"name": "error response",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{memberships-api}}/64ce6d9000812963e71f9c08",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{memberships-api}}",
+										"64ce6d9000812963e71f9c08"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Aug 2023 23:57:09 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Membership not found\",\n    \"httpCode\": 404,\n    \"error\": {\n        \"description\": \"Resource not found\",\n        \"id\": \"NOT_FOUND\",\n        \"extra\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "MEMBERSHIP-UPDATE",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"prio\": 0,\n    \"duration\": 31104000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/{{memberships-api}}/64cfc314a9ecfb36479019ec",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{memberships-api}}",
+								"64cfc314a9ecfb36479019ec"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ok response",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"duration\": 31104000\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{memberships-api}}/64ce96ac02186b26ce8a5c3d",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{memberships-api}}",
+										"64ce96ac02186b26ce8a5c3d"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Aug 2023 23:59:32 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Membership updated successfully\",\n    \"httpCode\": 200,\n    \"data\": {\n        \"id\": \"64ce96ac02186b26ce8a5c3d\",\n        \"key\": \"per-year\",\n        \"name\": \"Per Year\",\n        \"prio\": 0,\n        \"duration\": 31104000\n    }\n}"
+						},
+						{
+							"name": "error response",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"duration\": 31104000\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{memberships-api}}/523462456d34",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{memberships-api}}",
+										"523462456d34"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 06 Aug 2023 00:00:25 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Membership not found\",\n    \"httpCode\": 404,\n    \"error\": {\n        \"description\": \"Resource not found\",\n        \"id\": \"NOT_FOUND\",\n        \"extra\": null\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "PRODUCT-LIST",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/{{products-api}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{products-api}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ok response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{products-api}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{products-api}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 06 Aug 2023 00:33:47 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Membership list sent successfully\",\n    \"httpCode\": 200,\n    \"data\": [\n        {\n            \"id\": \"64ce997c02186b26ce8a5c42\",\n            \"name\": \"Product example\",\n            \"cost\": 10,\n            \"minPrio\": 30\n        },\n        {\n            \"id\": \"64ce99d702186b26ce8a5c45\",\n            \"name\": \"Product example 2\",\n            \"cost\": 14,\n            \"minPrio\": 345\n        },\n        {\n            \"id\": \"64ce99e102186b26ce8a5c46\",\n            \"name\": \"Product example 3\",\n            \"cost\": 423,\n            \"minPrio\": 63\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "PRODUCT-CREATE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Product example 10\",\n    \"cost\": 1500, \n    \"minPrio\": 5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/{{products-api}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{products-api}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ok response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Product example 4\",\n    \"cost\": 423, \n    \"minPrio\": 63\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{products-api}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{products-api}}"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 06 Aug 2023 00:34:22 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Product created successfully\",\n    \"httpCode\": 201,\n    \"data\": {\n        \"id\": \"64ceea8e02186b26ce8a5cd1\",\n        \"name\": \"Product example 4\",\n        \"cost\": 423,\n        \"minPrio\": 63\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "PRODUCT-UPDATE",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"minPrio\": 30\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/{{products-api}}/64ce997c02186b26ce8a5c42",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{products-api}}",
+								"64ce997c02186b26ce8a5c42"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ok response",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"minPrio\": 30\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{products-api}}/64ce997c02186b26ce8a5c42",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{products-api}}",
+										"64ce997c02186b26ce8a5c42"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 06 Aug 2023 00:35:07 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Membership updated successfully\",\n    \"httpCode\": 200,\n    \"data\": {\n        \"id\": \"64ce997c02186b26ce8a5c42\",\n        \"name\": \"Product example\",\n        \"cost\": 10,\n        \"minPrio\": 30\n    }\n}"
+						},
+						{
+							"name": "error response",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"minPrio\": 30\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{products-api}}/64ce997c02186b26ce",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{products-api}}",
+										"64ce997c02186b26ce"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 06 Aug 2023 00:36:07 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Membership not found\",\n    \"httpCode\": 404,\n    \"error\": {\n        \"description\": \"Resource not found\",\n        \"id\": \"NOT_FOUND\",\n        \"extra\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "PRODUCT-DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/{{products-api}}/64ceea8e02186b26ce8a5cd1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{products-api}}",
+								"64ceea8e02186b26ce8a5cd1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ok response",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{products-api}}/64ceea8e02186b26ce8a5cd1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{products-api}}",
+										"64ceea8e02186b26ce8a5cd1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 06 Aug 2023 00:38:57 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Product deleted successfully\",\n    \"httpCode\": 200,\n    \"data\": null\n}"
+						},
+						{
+							"name": "error response",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{products-api}}/64ceea8e02186b26ce8a5cd1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{products-api}}",
+										"64ceea8e02186b26ce8a5cd1"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 06 Aug 2023 00:39:14 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Membership not found\",\n    \"httpCode\": 404,\n    \"error\": {\n        \"description\": \"Resource not found\",\n        \"id\": \"NOT_FOUND\",\n        \"extra\": null\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Shipment",
+			"item": [
+				{
+					"name": "SHIPMENT-LIST",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/{{shimpments-api}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{shimpments-api}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ok response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{shimpments-api}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{shimpments-api}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 06 Aug 2023 00:48:48 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Shipment list sent successfully\",\n    \"httpCode\": 200,\n    \"data\": [\n        {\n            \"id\": \"64ceb36802186b26ce8a5c74\",\n            \"client\": \"64ce866202186b26ce8a5c0f\",\n            \"productList\": [\n                {\n                    \"id\": \"64ce997c02186b26ce8a5c42\",\n                    \"name\": \"Product example\",\n                    \"cost\": 10,\n                    \"minPrio\": 20\n                },\n                {\n                    \"id\": \"64ce99d702186b26ce8a5c45\",\n                    \"name\": \"Product example 2\",\n                    \"cost\": 14,\n                    \"minPrio\": 345\n                },\n                {\n                    \"id\": \"64ce99e102186b26ce8a5c46\",\n                    \"name\": \"Product example 3\",\n                    \"cost\": 423,\n                    \"minPrio\": 63\n                }\n            ],\n            \"totalCost\": null,\n            \"deliverDate\": null\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "SHIPMENT-BY-ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/{{shimpments-api}}/64ceb36802186b26ce8a5c74",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{shimpments-api}}",
+								"64ceb36802186b26ce8a5c74"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ok response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{shimpments-api}}/64ceb36802186b26ce8a5c74",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{shimpments-api}}",
+										"64ceb36802186b26ce8a5c74"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 06 Aug 2023 00:50:28 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Shipment retrieved successfully\",\n    \"httpCode\": 200,\n    \"data\": {\n        \"id\": \"64ceb36802186b26ce8a5c74\",\n        \"client\": \"64ce866202186b26ce8a5c0f\",\n        \"productList\": [\n            {\n                \"id\": \"64ce997c02186b26ce8a5c42\",\n                \"name\": \"Product example\",\n                \"cost\": 10,\n                \"minPrio\": 20\n            },\n            {\n                \"id\": \"64ce99d702186b26ce8a5c45\",\n                \"name\": \"Product example 2\",\n                \"cost\": 14,\n                \"minPrio\": 345\n            },\n            {\n                \"id\": \"64ce99e102186b26ce8a5c46\",\n                \"name\": \"Product example 3\",\n                \"cost\": 423,\n                \"minPrio\": 63\n            }\n        ],\n        \"totalCost\": null,\n        \"deliverDate\": null\n    }\n}"
+						},
+						{
+							"name": "error response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{shimpments-api}}/64ceb36802186b26c",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{shimpments-api}}",
+										"64ceb36802186b26c"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 06 Aug 2023 00:51:36 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Shipment not found\",\n    \"httpCode\": 404,\n    \"error\": {\n        \"description\": \"Resource not found\",\n        \"id\": \"NOT_FOUND\",\n        \"extra\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "SHIPMENT-CREATE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"client\": \"64cfc31ea9ecfb36479019ed\",\n    \"productList\": [\n\n   \n        {\n            \"id\": \"64cfd20dd8625657dbf68f7c\",\n            \"name\": \"Product example 3\",\n            \"cost\": 300,\n            \"minPrio\": 30\n        },\n        {\n            \"id\": \"64cfd21ad8625657dbf68f7d\",\n            \"name\": \"Product example 4\",\n            \"cost\": 500,\n            \"minPrio\": 60\n        },\n        {\n            \"id\": \"64cfd22ed8625657dbf68f7e\",\n            \"name\": \"Product example 5\",\n            \"cost\": 500,\n            \"minPrio\": 30\n        },\n\n        {\n            \"id\": \"64cfd24ad8625657dbf68f80\",\n            \"name\": \"Product example 7\",\n            \"cost\": 850,\n            \"minPrio\": 81\n        },\n        {\n            \"id\": \"64cfd255d8625657dbf68f81\",\n            \"name\": \"Product example 8\",\n            \"cost\": 900,\n            \"minPrio\": 90\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/{{shimpments-api}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{shimpments-api}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ok response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"client\": \"64cecc7802186b26ce8a5c8c\",\n    \"productList\": [\n    {\n        \"id\": \"64ce99d702186b26ce8a5c45\",\n        \"name\": \"Product example 2\",\n        \"cost\": 14,\n        \"minPrio\": 345\n    }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{shimpments-api}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{shimpments-api}}"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 06 Aug 2023 00:52:54 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Shipment created successfully\",\n    \"httpCode\": 201,\n    \"data\": {\n        \"id\": \"64ceeee602186b26ce8a5cdc\",\n        \"client\": \"64cecc7802186b26ce8a5c8c\",\n        \"productList\": [\n            {\n                \"id\": \"64ce99d702186b26ce8a5c45\",\n                \"name\": \"Product example 2\",\n                \"cost\": 14,\n                \"minPrio\": 345\n            }\n        ],\n        \"totalCost\": null,\n        \"deliverDate\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "SHIPMENT-DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/{{shimpments-api}}/64ceeee602186b26ce8a5cdc",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{shimpments-api}}",
+								"64ceeee602186b26ce8a5cdc"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "error response",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{shimpments-api}}/64cecc7802186b26ce8a5c8c",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{shimpments-api}}",
+										"64cecc7802186b26ce8a5c8c"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 06 Aug 2023 00:54:59 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Shipment not found\",\n    \"httpCode\": 404,\n    \"error\": {\n        \"description\": \"Resource not found\",\n        \"id\": \"NOT_FOUND\",\n        \"extra\": null\n    }\n}"
+						},
+						{
+							"name": "ok response",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{shimpments-api}}/64ceeee602186b26ce8a5cdc",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{shimpments-api}}",
+										"64ceeee602186b26ce8a5cdc"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 06 Aug 2023 00:55:30 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Shipment deleted successfully\",\n    \"httpCode\": 200,\n    \"data\": null\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "RENEW MEMBERSHIP",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "clientId",
+							"value": "64cfc31ea9e",
+							"type": "text"
+						},
+						{
+							"key": "membershipId",
+							"value": "64cfc2dea9ecfb36479019eb",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/client/renewMembership",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"client",
+						"renewMembership"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ok response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "clientId",
+									"value": "64cfc33aa9ecfb36479019ee",
+									"type": "text"
+								},
+								{
+									"key": "membershipId",
+									"value": "64cfc314a9ecfb36479019ec",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/client/renewMembership",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"client",
+								"renewMembership"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Aug 2023 18:58:07 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Client membership renewed successfully\",\n    \"httpCode\": 200,\n    \"data\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "REMOVE PRODUCT",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "productId",
+							"value": "64cfd21ad8625657dbf68f7d",
+							"type": "text"
+						},
+						{
+							"key": "shipmentId",
+							"value": "64cfebdcd8625657dbf68f9b",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/ship/removeProduct",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"ship",
+						"removeProduct"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ok response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "productId",
+									"value": "64cfd21ad8625657dbf68f7d",
+									"type": "text"
+								},
+								{
+									"key": "shipmentId",
+									"value": "64cfebdcd8625657dbf68f9b",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/ship/removeProduct",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"ship",
+								"removeProduct"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Aug 2023 18:53:24 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Product removed successfully\",\n    \"httpCode\": 200,\n    \"data\": {\n        \"id\": \"64cfec24d8625657dbf68f9c\",\n        \"client\": \"64cfc31ea9ecfb36479019ed\",\n        \"productList\": [\n            {\n                \"id\": \"64cfd24ad8625657dbf68f80\",\n                \"name\": \"Product example 7\",\n                \"cost\": 850,\n                \"minPrio\": 81\n            },\n            {\n                \"id\": \"64cfd255d8625657dbf68f81\",\n                \"name\": \"Product example 8\",\n                \"cost\": 900,\n                \"minPrio\": 90\n            }\n        ],\n        \"totalCost\": 1750,\n        \"deliverDate\": \"2023-08-07T18:53:24.515+00:00\"\n    }\n}"
+				}
+			]
+		}
+	]
+}
